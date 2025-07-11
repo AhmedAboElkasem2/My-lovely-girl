@@ -180,7 +180,7 @@
   </div>
 
   <audio id="bg-music" autoplay loop>
-    <source src="romantic-music.mp3" type="audio/mpeg" />
+  <source src="romantic-music.mp3" type="audio/mpeg">
   </audio>
 
   <script>
@@ -220,3 +220,11 @@
   </script>
 </body>
 </html>
+<script>
+  document.addEventListener('click', function () {
+    const audio = document.getElementById('bg-music');
+    if (audio && audio.paused) {
+      audio.play().catch(e => console.log('فشل تشغيل الصوت:', e));
+    }
+  }, { once: true });
+</script>
